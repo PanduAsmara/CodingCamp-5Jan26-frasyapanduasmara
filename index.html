@@ -9,16 +9,16 @@
   <h2>Todo List</h2>
 
   <form id="formTodo">
-    <input type="text" placeholder="Masukkan Kegiatan">
-    <input type="date">
-    <button>+</button>
-  </form>
+  <input type="text" id="todoText" placeholder="Masukkan Kegiatan">
+  <input type="date" id="todoDate">
+  <button>+</button>
+</form>
 
-  <select>
-    <option>Semua</option>
-    <option>Selesai</option>
-    <option>Belum</option>
-  </select>
+<select id="filter">
+  <option value="all">Semua</option>
+  <option value="done">Selesai</option>
+  <option value="notdone">Belum</option>
+</select>
 
 
   <ul id="listTodo"></ul>
