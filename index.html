@@ -5,24 +5,25 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <div class="card">
   <h2>To-do List</h2>
 
   <form id="formTodo">
-  <input type="text" id="todoText" placeholder="Masukkan Kegiatan">
-  <input type="date" id="todoDate">
-  <button>+</button>
-</form>
+    <input type="text" id="todoText" placeholder="Masukkan Kegiatan">
+    <input type="date" id="todoDate">
+    <button type="submit">+</button>
+  </form>
 
-<select id="filter">
-  <option value="all">Semua</option>
-  <option value="done">Selesai</option>
-  <option value="notdone">Belum</option>
-</select>
-
+  <select id="filter">
+    <option value="all">Semua</option>
+    <option value="done">Selesai</option>
+    <option value="notdone">Belum</option>
+  </select>
 
   <ul id="listTodo"></ul>
+</div>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

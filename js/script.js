@@ -19,9 +19,11 @@ form.addEventListener("submit", function(event) {
 
   var btnDone = document.createElement("button");
   btnDone.innerText = "Selesai";
+  btnDone.type = "button";
 
   var btnDelete = document.createElement("button");
   btnDelete.innerText = "Hapus";
+  btnDelete.type = "button";
 
   li.appendChild(text);
   li.appendChild(btnDone);
@@ -34,14 +36,18 @@ form.addEventListener("submit", function(event) {
 
   btnDone.addEventListener("click", function() {
     li.classList.toggle("selesai");
+    applyFilter();
   });
 
   btnDelete.addEventListener("click", function() {
     li.remove();
+    applyFilter();
   });
 });
 
-filter.addEventListener("change", function() {
+filter.addEventListener("change", applyFilter);
+
+function applyFilter() {
   var semuaTodo = listTodo.children;
 
   for (var i = 0; i < semuaTodo.length; i++) {
@@ -49,13 +55,15 @@ filter.addEventListener("change", function() {
 
     if (filter.value == "all") {
       item.style.display = "block";
-    } else if (filter.value == "done") {
+    } 
+    else if (filter.value == "done") {
       if (item.classList.contains("selesai")) {
         item.style.display = "block";
       } else {
         item.style.display = "none";
       }
-    } else {
+    } 
+    else {
       if (!item.classList.contains("selesai")) {
         item.style.display = "block";
       } else {
@@ -63,4 +71,4 @@ filter.addEventListener("change", function() {
       }
     }
   }
-});
+}
