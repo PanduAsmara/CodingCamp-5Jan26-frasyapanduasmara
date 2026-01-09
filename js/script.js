@@ -16,3 +16,8 @@ form.addEventListener("submit", function(e) {
   inputText.value = "";
   inputDate.value = "";
 });
+
+if (inputText.value == "" || inputDate.value == "") {
+  alert("Input tidak boleh kosong");
+  return;
+}
