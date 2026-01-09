@@ -21,3 +21,12 @@ if (inputText.value == "" || inputDate.value == "") {
   alert("Input tidak boleh kosong");
   return;
 }
+
+var deleteBtn = document.createElement("button");
+deleteBtn.innerText = "Hapus";
+
+deleteBtn.addEventListener("click", function() {
+  li.remove();
+});
+
+li.appendChild(deleteBtn);

@@ -3,23 +3,27 @@
 <head>
   <title>To Do List</title>
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 
   <h2>To Do List</h2>
 
-   <form>
-    <input type="text" placeholder="Masukkan kegiatan">
-    <input type="date">
-    <button>Tambah</button>
+  <form id="formTodo">
+    <input type="text" id="todoText" placeholder="Masukkan kegiatan">
+    <input type="date" id="todoDate">
+    <button type="submit">Tambah</button>
   </form>
 
-  <ul>
-  <li>Contoh list nya</li>
-</ul>
+  <br>
 
-<script src="js/script.js"></script>
+  <select id="filter">
+    <option value="all">Semua</option>
+    <option value="done">Selesai</option>
+    <option value="notdone">Belum Selesai</option>
+  </select>
 
+  <ul id="listTodo"></ul>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
