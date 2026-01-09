@@ -1,3 +1,35 @@
 body {
   font-family: Arial;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input, button, select {
+  padding: 5px;
+  margin: 3px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.selesai {
+  text-decoration: line-through;
+  color: gray;
 }

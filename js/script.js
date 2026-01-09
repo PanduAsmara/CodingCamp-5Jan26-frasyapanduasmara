@@ -1,32 +1,66 @@
-console.log("javascript connected");
+var form = document.getElementById("formTodo");
+var todoText = document.getElementById("todoText");
+var todoDate = document.getElementById("todoDate");
+var listTodo = document.getElementById("listTodo");
+var filter = document.getElementById("filter");
 
-var form = document.querySelector("form");
-var inputText = document.querySelector("input[type='text']");
-var inputDate = document.querySelector("input[type='date']");
-var list = document.querySelector("ul");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+  if (todoText.value == "" || todoDate.value == "") {
+    alert("Input tidak boleh kosong");
+    return;
+  }
 
   var li = document.createElement("li");
-  li.innerText = inputText.value + " (" + inputDate.value + ")";
 
-  list.appendChild(li);
+  var text = document.createElement("span");
+  text.innerText = todoText.value + " (" + todoDate.value + ")";
 
-  inputText.value = "";
-  inputDate.value = "";
+  var btnDone = document.createElement("button");
+  btnDone.innerText = "Selesai";
+
+  var btnDelete = document.createElement("button");
+  btnDelete.innerText = "Hapus";
+
+  li.appendChild(text);
+  li.appendChild(btnDone);
+  li.appendChild(btnDelete);
+
+  listTodo.appendChild(li);
+
+  todoText.value = "";
+  todoDate.value = "";
+
+  btnDone.addEventListener("click", function() {
+    li.classList.toggle("selesai");
+  });
+
+  btnDelete.addEventListener("click", function() {
+    li.remove();
+  });
 });
 
-if (inputText.value == "" || inputDate.value == "") {
-  alert("Input tidak boleh kosong");
-  return;
-}
+filter.addEventListener("change", function() {
+  var semuaTodo = listTodo.children;
 
-var deleteBtn = document.createElement("button");
-deleteBtn.innerText = "Hapus";
+  for (var i = 0; i < semuaTodo.length; i++) {
+    var item = semuaTodo[i];
 
-deleteBtn.addEventListener("click", function() {
-  li.remove();
+    if (filter.value == "all") {
+      item.style.display = "block";
+    } else if (filter.value == "done") {
+      if (item.classList.contains("selesai")) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    } else {
+      if (!item.classList.contains("selesai")) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    }
+  }
 });
-
-li.appendChild(deleteBtn);
