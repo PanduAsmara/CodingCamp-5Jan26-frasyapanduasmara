@@ -38,9 +38,19 @@ input, select {
 }
 
 button {
-  background-color: #38bdf8;
+  background-color: #3875f8;
   color: black;
   cursor: pointer;
+}
+
+.filter-box {
+  background-color: #334155;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 ul {
@@ -54,3 +64,9 @@ li {
   padding: 8px;
   border-radius: 5px;
 }
+
+.selesai {
+  text-decoration: line-through;
+  color: #cbd5f5;
+}
+
